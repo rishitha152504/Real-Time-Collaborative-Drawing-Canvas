@@ -2,6 +2,12 @@
 
 A multi-user drawing application where users draw on a shared canvas in real time. When one user draws, others see it **while it is happening**. Built with raw HTML5 Canvas API, Node.js, and Socket.io.
 
+## Live Demo
+
+After deploying (see [DEPLOY.md](./DEPLOY.md)), add your live URL here:
+
+- **Live demo:** `https://your-app-name.onrender.com`
+
 ## Features
 
 - **Drawing tools**: Brush, Eraser, multiple colors, adjustable stroke width
@@ -108,6 +114,10 @@ Tested on modern Chrome, Firefox, and Safari. Requires support for:
 - README and ARCHITECTURE: ~0.5 hour  
 
 **Total (example):** ~6 hours. Your actual time may vary.
+
+## Deploy to Get Your Live Link
+
+See **[DEPLOY.md](./DEPLOY.md)** for step-by-step deployment on **Render.com** (free). You’ll get a URL like `https://collaborative-canvas-xxxx.onrender.com` — that’s your deployed link for the assignment.
 
 ## License
 

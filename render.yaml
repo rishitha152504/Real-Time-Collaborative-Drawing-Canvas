@@ -1,0 +1,13 @@
+# Render.com Blueprint - Deploy with one click
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: collaborative-canvas
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
