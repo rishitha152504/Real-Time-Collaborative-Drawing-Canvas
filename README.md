@@ -117,7 +117,7 @@ Tested on modern Chrome, Firefox, and Safari. Requires support for:
 
 ## Deploy to Get Your Live Link
 
-See **[DEPLOY.md](./DEPLOY.md)** for step-by-step deployment on **Render.com** (free). You’ll get a URL like `https://collaborative-canvas-xxxx.onrender.com` — that’s your deployed link for the assignment.
+See **[DEPLOY.md](./DEPLOY.md)** for step-by-step deployment on **Railway**. You’ll get a URL like `https://your-project.up.railway.app` — that’s your deployed link for the assignment.
 
 ## License
 

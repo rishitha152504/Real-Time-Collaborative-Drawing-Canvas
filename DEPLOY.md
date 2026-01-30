@@ -1,6 +1,6 @@
 # Deploy to Get Your Live Link
 
-Use **Render.com** (free tier) to get a deployed URL. The app runs as one Node.js service (Express + Socket.io).
+This project is deployed using **Railway**. The app runs as one Node.js service (Express + Socket.io).
 
 ---
 
@@ -23,37 +23,29 @@ git push -u origin main
 
 ---
 
-## Step 2: Deploy on Render.com
+## Step 2: Deploy on Railway
 
 1. **Sign up / Log in**  
-   Go to **[https://render.com](https://render.com)** and sign in (GitHub login is easiest).
+   Go to **[https://railway.app](https://railway.app)** and sign in (GitHub login is easiest).
 
-2. **New Web Service**  
-   - Click **Dashboard** → **New** → **Web Service**  
-   - Connect your GitHub account if asked and select the repo:  
-     **rishitha152504/Real-Time-Collaborative-Drawing-Canvas**
+2. **New Project**  
+   - Click **New Project**  
+   - Choose **Deploy from GitHub repo**  
+   - Select the repo: **rishitha152504/Real-Time-Collaborative-Drawing-Canvas**  
+   - (If your app is in a subfolder like `collaborative-canvas`, set **Root Directory** to that folder in settings.)
 
-3. **Configure the service**
-   - **Name:** `collaborative-canvas` (or any name you like)
-   - **Region:** Oregon (or nearest)
-   - **Branch:** `main`
-   - **Runtime:** `Node`
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-   - **Plan:** Free
+3. **Configure**  
+   Railway usually auto-detects Node.js. Ensure:
+   - **Build Command:** `npm install` (or leave default)
+   - **Start Command:** `npm start` (or `node server/server.js`)
+   - **Root Directory:** Leave blank if `package.json` is at repo root; set to `collaborative-canvas` if the app is inside that folder.
 
-4. **Create**  
-   Click **Create Web Service**. Render will install dependencies and start the app.
+4. **Generate domain**  
+   - In your service, go to **Settings** → **Networking** → **Generate Domain**  
+   - Railway will give you a URL like: `https://your-app.up.railway.app`
 
-5. **Wait for deploy**  
-   First deploy can take 2–3 minutes. When the status is **Live**, the service is ready.
-
-6. **Your deployed link**  
-   At the top you’ll see a URL like:
-   ```text
-   https://collaborative-canvas-xxxx.onrender.com
-   ```
-   That is your **deployed link**. Open it in the browser to use the app.
+5. **Your deployed link**  
+   That URL is your **deployed link**. Open it in the browser to use the app.
 
 ---
 
@@ -66,21 +58,11 @@ git push -u origin main
 
 ---
 
-## Notes (Render free tier)
+## Notes (Railway)
 
-- **Cold start:** After ~15 minutes of no traffic, the app sleeps. The first request may take 30–50 seconds; then it’s fast.
 - **WebSockets:** Supported; real-time drawing works.
-- **HTTPS:** Render gives you HTTPS automatically.
-
----
-
-## Optional: One-click deploy with Blueprint
-
-If your repo has `render.yaml`:
-
-1. On Render: **New** → **Blueprint**.
-2. Connect the repo **Real-Time-Collaborative-Drawing-Canvas**.
-3. Render will read `render.yaml` and create the Web Service. Use the URL it gives you as your deployed link.
+- **HTTPS:** Railway provides HTTPS automatically.
+- **Environment:** Railway sets `PORT` automatically; the app uses `process.env.PORT`.
 
 ---
 
@@ -88,6 +70,6 @@ If your repo has `render.yaml`:
 
 Put it in your README and in your submission, for example:
 
-- **Live demo:** https://collaborative-canvas-xxxx.onrender.com
+- **Live demo:** https://your-app.up.railway.app
 
-Replace `xxxx` with the ID Render shows in your service URL.
+Replace with the actual URL Railway shows for your service.
