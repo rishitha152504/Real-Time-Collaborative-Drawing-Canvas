@@ -70,6 +70,6 @@ git push -u origin main
 
 Put it in your README and in your submission, for example:
 
-- **Live demo:** https://your-app.up.railway.app
+- **Live demo:** [https://your-app.up.railway.app](https://collaborative-canvas-production-5205.up.railway.app/)
 
 Replace with the actual URL Railway shows for your service.
