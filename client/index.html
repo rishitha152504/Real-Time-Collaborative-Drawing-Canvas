@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaborative Drawing Canvas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <h1>Collaborative Canvas</h1>
+      <div class="user-info">
+        <span id="my-color" class="color-dot"></span>
+        <span id="my-name">You</span>
+      </div>
+      <div class="online-users" id="online-users">
+        <span class="label">Online:</span>
+        <div id="users-list"></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="toolbar">
+        <div class="tool-group">
+          <label>Tool</label>
+          <div class="tool-buttons">
+            <button type="button" id="tool-brush" class="tool-btn active" title="Brush">Brush</button>
+            <button type="button" id="tool-eraser" class="tool-btn" title="Eraser">Eraser</button>
+          </div>
+        </div>
+        <div class="tool-group">
+          <label>Color</label>
+          <div class="color-palette" id="color-palette"></div>
+        </div>
+        <div class="tool-group">
+          <label>Stroke width</label>
+          <input type="range" id="stroke-width" min="1" max="40" value="4" />
+          <span id="stroke-width-value">4</span>px
+        </div>
+        <div class="tool-group undo-redo">
+          <button type="button" id="btn-undo" class="action-btn" title="Undo" disabled>Undo</button>
+          <button type="button" id="btn-redo" class="action-btn" title="Redo" disabled>Redo</button>
+        </div>
+      </aside>
+
+      <div class="canvas-wrapper">
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <div id="cursors" class="cursors-layer"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span id="status">Connecting...</span>
+      <span class="footer-hint">Drawing syncs live • Anyone can Undo/Redo • Move over canvas to show cursor</span>
+    </footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="canvas.js"></script>
+  <script src="websocket.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
